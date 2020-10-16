@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="#bottom">去底部</a>
+<!-- h 标签独占一行 -->
+<h1>一级标题</h1> <!-- 最重要 -->
+<h2>二级标题</h2>
+<h3>三级标题</h3>
+<h4>四级标题</h4>
+<h5>五级标题</h5>
+<h6>六级标题</h6> <!-- 最不重要 -->
+
+<!-- p 表示页面中的一个段落 -->
+<p> 这是一个段落</p>
+
+<!-- 用来为标题分组 -->
+<hgroup>
+    <h1>一级标题</h1>
+    <h2>二级标题</h2>
+</hgroup>
+
+<!-- em 语音语调加重-->
+<p>今天天气<em>针不戳</em></p>
+<!-- strong 强调 -->
+<p>今天天气<strong>针不戳</strong></p>
+<!-- blockquote 引用-->
+他说:
+<blockquote>今天天气针不戳</blockquote>
+<!-- q 表示一个短引用 -->
+他说:
+<q>今天天气针不戳</q>!
+
+<!-- br 换行 -->
+<br/>
+!
+
+<!-- block element 一般用来布局
+     and
+     inline element 一般用来包裹文字
+
+     一般会在块元素中放行内元素，但不会在行内元素中放块元素
+     p 元素不能放块元素
+-->
+
+<!--
+    布局标签 HTML5新增 用的最多的是div 语意 = section
+
+    header 表示网页头部
+    main 主体
+    footer 表示网页底部
+    nav 表示导航
+    aside 和主体相关的其他内容 一般是边栏
+    article 表示一个独立的文章
+    section 表示一个独立的区块 上边的标签都不能表示时，可以使用section， 等于other
+-->
+
+<header>由我来组成头部</header>
+<main>hello world</main>
+<footer>由我来组成底部</footer>
+<nav>由我来组成导航栏</nav>
+<aside>由我来组成边栏</aside>
+<article></article>
+<section></section>
+
+<!--
+    列表（list）
+    1.有序列表 <ol> <li>
+    2.无序列表 <ui> <li>
+    3.定义列表 <dl> <dd>
+-->
+
+<ol>
+    <li>a</li>
+    <li>b</li>
+</ol>
+<ui>
+    <li>a</li>
+    <li>b</li>
+</ui>
+<dl>
+    <dt>结构</dt>
+    <dd>content</dd>
+    <dd>content</dd>
+    <dd>content</dd>
+</dl>
+
+<!--
+    超链接
+    target="_self" 默认值 在当前页面打开超链接
+    target="_blank" 在一个新的页面中打开超链接
+-->
+<a href="https://www.baidu.com">点我跳转到百度</a>
+<br>
+<a id="bottom" href="#">回到顶部</a>
+<br>
+<a href="javascript:;">这个标签什么也不会发生, javascript占位符</a>
+
+<!--
+    img 标签 自结束标签
+    替换元素 基于块元素与行内元素之间
+    <img src="" alt="描述" width="px" height="px  ">
+-->
+
+<!--
+    内联框架
+
+    <iframe frameborder="0" src="https://www.baidu.com" width="px" height="px"></iframe>
+-->
+
+<!--
+    audio   引入外部的音频文件
+    默认不允许用户自己控制播放
+    controls 不用赋值 用户可控制
+    autoplay 音频文件自动播放
+    loop 循环播放
+
+    <audio src="" controls></audio>
+
+    有的浏览器不支持audio 因此可以写成
+    <audio>
+        对不起，你的浏览器不支持播放
+        <source src=""></source>
+    </audio>
+-->
+</body>
+</html>

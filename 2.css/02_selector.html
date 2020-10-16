@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+<!--
+    2.css 中的注释
+    /*
+        xxx
+    */
+    2.css 选择器 选中元素
+    2.css 声明块 设置样式
+
+    demo1: 选择器: #id .class
+
+    <style>
+        p{
+            color: red;
+        }
+
+        #blue{
+            color: blue;
+        }
+
+        .yellow{
+            color: yellow;
+        }
+    </style>
+
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p id="blue">4</p>
+    <p class="yellow">5</p>
+    <p class="yellow">6</p>
+    <p>7</p>
+    <p>8</p>
+-->
+
+<!--
+    关系选择器
+       父元素
+            - 直接包含子元素的元素叫做父元素
+       子元素
+            - 直接被父元素包含的元素叫做子元素
+            - 子元素选择器: 父元素 > 子元素
+       祖先元素
+            - 直接或间接包含后代元素的元素叫做祖先元素
+            - 父元素也是祖先元素
+        后代元素
+            - 直接或间接被祖先元素包含的元素叫后代元素
+            - 后代元素选择器: 祖先 后代
+        兄弟元素
+            - 拥有相同父元素的元素是兄弟元素
+            - 前一个 + 下一个 选择下一个
+            - 前一个 ~ 下一个 选择下面所有
+
+    <style>
+        div.hello > span {
+            color: red;
+        }
+
+        div span {
+            color: blue;
+        }
+
+        p + span {
+            color: yellow;
+        }
+    </style>
+
+    <div>
+    我是一个div
+    <p>
+        我是div中的p元素
+        <span>我是p元素中的span</span>
+    </p>
+    <span>我是div中的span元素</span>
+    </div>
+    <div class="hello">
+    <span>hello</span>
+    </div>
+-->
+
+<!--
+    属性选择器
+    p[title]{
+            color: red;
+        }
+    [属性名] 选择含有指定属性的元素
+    p[title="2"]{
+            color: red;
+        }
+    [属性名=属性值] 选择含有指定属性和属性值的元素
+    [属性^=属性值] 选择含有指定开头
+    [属性$=属性值] 选择含有指定结尾
+    [属性*=属性值] 选择含有属性值的属性
+
+    <p title="1">1</p>
+    <p title="2">2</p>
+    <p title="3">3</p>
+    <p>4</p>
+    <p>5</p>
+    <p>6</p>
+-->
+
+<!--
+    伪类选择器
+    :first-child
+    :last-child
+    :nth-child(2) 特殊值 n: 0~正无穷 even=奇数=2n+1 odd=偶数=2n
+    以上选择器是根据所有子元素进行排序的
+    :first-of-type
+    :last-of-type
+    :nth-of-type
+    以上是根据同类型的进行排序
+    :not() 否定伪类
+
+    <style>
+        ul > li:first-child{
+            color: red;
+        }
+
+        ul > li:first-of-type{
+            color: red;
+        }
+    </style>
+
+    <ul>
+        <span>hello</span>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+-->
+
+<!--
+    超链接的伪类
+    a:link{
+        color: red;
+    }
+    :link 代表没访问过的链接
+    :visited 代表访问过的链接
+    :hover 代表鼠标移入的状态
+    :active 点击的状态
+-->
+
+<!--
+    伪元素选择器 设置一个不存在的元素
+    ::first-letter 第一个字母
+    ::first-line 第一行
+    ::selection 鼠标选中的元素
+    ::before 元素的开始
+    ::after 元素的结束
+    before 与 after 必须结合content使用
+    <style>
+        p::first-letter{
+            font-size: 60px;
+        }
+        p::before{
+            content: 'abc';
+        }
+    </style>
+    以上效果=
+    <p><span style="font-size: 60px;">h</span>ello world!</p>
+-->
+
+<!--
+    选择器的权重
+    内联 1000
+    id   100
+    类与伪类 10
+    元素       1
+    统配 0
+    继承 无
+
+    可以在样式后加入 !important 提升到最高(> 1000)， 不到万不得已不要用
+    color: red !important
+-->
+</body>
+</html>

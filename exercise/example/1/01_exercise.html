@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片列表练习</title>
+
+    <link rel="stylesheet" href="../../reset.css">
+
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        /**
+            通过截图工具知道 整个列表宽高 190 * 470
+        **/
+        .img-list{
+            height: 470px;
+            width: 190px;
+            background-color: #F4F4F4;
+
+            overflow: hidden;
+            margin: 50px auto;
+
+        }
+
+        .img-list li:not(:last-child){
+            margin-bottom: 9px;
+        }
+
+        .img-list img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<!--
+<div>
+    <a href="javascript:;"><img src="1_1_.jpg.webp" ></a>
+    <a href="javascript:;"><img src="1_2_.jpg.webp" ></a>
+    <a href="javascript:;"><img src="1_3_.png.webp" ></a>
+</div>
+-->
+
+<ul class="img-list">
+    <li>
+        <a href="javascript:;">
+            <img src="1_1_.jpg.webp" >
+        </a>
+    </li>
+    <li>
+        <a href="javascript:;">
+            <img src="1_2_.jpg.webp" >
+        </a>
+    </li>
+    <li>
+        <a href="javascript:;">
+            <img src="1_3_.png.webp" >
+        </a>
+    </li>
+</ul>
+
+</body>
+</html>

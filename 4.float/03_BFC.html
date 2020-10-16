@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>高度塌陷和BFC(Block Formatting context)</title>
+
+    <!--
+        开启BFC后的特点:
+            - 开启BFC的元素不会被浮动元素锁覆盖
+            - 开启BFC的元素子元素和父元素外边距不会重叠
+            - 开启BFC的元素可以包含浮动的子元素
+            父容器开启:
+            overflow 非visible
+            overflow: hidden
+
+            另一种解决BFC的方式
+            本元素开启
+            clear: left/right
+                - 清除左右浮动元素对本元素的影响
+                - 原理: 为元素添加一个上外边距使其位置不受浮动元素的影响
+            最终解决方案
+            伪类after
+     -->
+    <style>
+        /*.outer{
+            border: 10px red solid;
+            overflow: hidden;
+        }
+
+        .inner{
+            width: 100px;
+            height: 200px;
+            background-color: antiquewhite;
+
+            !**
+                高度塌陷
+             *!
+            float: left;
+        }
+
+        .other{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            clear: left;
+        }*/
+
+        .outer{
+            border: 10px red solid;
+        }
+
+        .inner{
+            width: 100px;
+            height: 200px;
+            background-color: antiquewhite;
+            float: left;
+        }
+
+        .outer:after{
+            content: '';
+            clear: both;
+            /* after是行内元素 需要转成block */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="outer">
+    <div class="inner"></div>
+</div>
+<div class="other"></div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字体属性</title>
+
+    <style>
+        div{
+            border: 1px red solid;
+            font: normal normal 50px/2 Serif;
+
+            /**
+            字体样式
+                1. font-weight:
+                    - bold 加粗
+                    - normal 正常
+                    - 100~900
+                2. font-style:
+                    - 字体格式
+
+                 3. font-size/line-height
+                 行间距 = （line-height - font-size）/ 2
+                 居中: line-height = font-size;
+                 4. font-family
+             文本样式
+                1. text-align: 文字的水平对齐
+                    - right 右对齐
+                    - left 左对齐
+                    - center 居中对齐
+                    - justify 两端对齐
+                2. vertical-align: 元素的垂直对齐
+                    - top 顶部对齐
+                    - baseline 基线对齐
+                    - npx n: 正数往上 负数往下
+                3. text-decoration: 文本修饰
+                    - none 不修饰
+                    - underline 下划线
+                    - line-through 删除线
+                    - overline 上划线
+                4. white-space: 网页如何处理空白
+                    - normal:
+                    - nowrap 不换行
+                    - pre 保留空白
+             */
+        }
+
+        span{
+            font-size: 20px;
+            border: 1px blue solid;
+
+            vertical-align: middle;
+            text-decoration: line-through;
+            white-space: pre;
+        }
+
+        /**
+            溢出部分显示省略号
+            1. 设置宽度
+            2. white-space: nowrap
+            3. overflow: hidden
+            4. text-overflow: ellipsis
+         */
+        p{
+            width: 100px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    今天天气真不错
+    <span>Helloy  a       a
+    a</span>
+
+</div>
+
+
+<p>asdasdsddasdasdasdasdsadadsdasd</p>
+
+</body>
+</html>

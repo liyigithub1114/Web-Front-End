@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位</title>
+
+    <link rel="stylesheet" href="../exercise/reset.css">
+    <style>
+        body{
+            font-size: 60px;
+        }
+
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #666666;
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+
+            /**
+                相对定位
+                特点：
+                    - 开启相对定位后，不设置偏移量不会有任何效果
+                    - 相对定位对照物为文档流中初始的位置
+                    - 相对位置会提升元素层级(覆盖其他元素)
+                    - 不会使元素脱离文档流
+                    - 不会改变元素性质
+                    position: relative;
+                    left: 200px;
+                    top: -200px
+                绝对定位
+                特定：
+                    - 开启绝对定位后，不设置偏移量不会有任何效果
+                    - 开启绝对定位后， 元素会从文档流中脱离
+                    - 绝对定位会改变元素的性质，行内变成块， 快的高宽被内容撑开
+                    - 绝对定位会使元素提升一个层级
+                    - 参照物为包含块
+                        包含块:
+                            - 正常情况下: 最近的祖先元素
+                            - 绝对定位包含块: 最近的开启了定位的祖先元素
+                    position: absolute;
+                    left: 200px;
+                    top: 0;
+                固定定位
+                特点:
+                    - 固定定位是一种特殊的绝对定位
+                    - 与绝对定位不同的是，参照物为浏览器的视口
+                    - 不会随滚动条而滚动
+                    position: fixed;
+                    left: 200px;
+                    top: 0;
+                 粘滞定位
+                 特点:
+                    - 对照物为body
+                    - 当滚动条向下滚到offset 位置时，元素不再随滚动条移动
+
+             */
+
+            position: sticky;
+            top: 0px;
+
+        }
+
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+        .box4{
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+            position: relative;
+        }
+
+        .box5{
+            width: 50px;
+            height: 50px;
+            background-color: cadetblue;
+
+            /**
+                以下方式可以水平垂直居中
+                绝对路径中
+                之前的等式改为
+                left + margin-left +。。。+margin-right + right = 水平长度
+
+                可变为auto 的有 width、left、right、margin
+             */
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+    position:
+        - static 没有开启定位
+        - relative 相对定位
+        - absolute 决定定位
+        - fixed 固定定位
+        - sticky 粘滞定位
+    z-index:
+       - 越高，层级越高
+-->
+
+<div class="box1">1</div>
+<div class="box2">2</div>
+<div class="box3">3</div>
+<div class="box4">4
+    <div class="box5">5</div>
+</div>
+</body>
+</html>

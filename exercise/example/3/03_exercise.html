@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网易新闻练习</title>
+    <link rel="stylesheet" href="../../reset.css">
+
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .news{
+            height: 357px;
+            width: 300px;
+            background-color: white;
+
+            margin: 50px auto;
+
+            border-top: 1px solid #ddd;
+        }
+
+        .news-title{
+            height: 41px;
+            line-height: 41px;
+            border-top: 1px red solid;
+
+            /*
+                块元素 但不撑满
+             */
+            display: inline-block;
+            margin-top: -1px;
+        }
+
+        .news-desc h2{
+            margin-top: -2px;
+        }
+
+        .news-desc span{
+            height: 40px;
+            width: 54px;
+            color: white;
+            background-color: red;
+
+            font-weight: bold;
+            display: inline-block;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .news-desc strong{
+            height: 40px;
+            width: 246px;
+            display: inline-block;
+
+            line-height: 40px;
+            text-indent: 10px;
+            color: #40406b;
+            font-weight: bold;
+        }
+
+        .news-title a{
+            color: #40406b;
+
+            font-weight: bold;
+        }
+
+        .news-list{
+            margin-top: 20px;
+            padding-left: 14px;
+        }
+
+        .news-list li:not(:last-child){
+            margin-bottom: 17px;
+        }
+
+        .news-list li::before{
+            content: '.';
+            color: rgb(218,218,218);
+        }
+
+        .news-list li a{
+            font-size: 14px;
+            color: #666666;
+        }
+
+        .news-list li a:hover{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="news">
+    <h2 class="news-title">
+        <a href="javascript:;">新闻专题</a>
+    </h2>
+    <div class="news-desc">
+        <a href="javascript:;">
+            <img src="3_1.webp"  />
+            <!-- HOT 54*40  246*40-->
+            <h2><span>HOT</span><strong>2020年全国两会</strong></h2>
+        </a>
+    </div>
+    <ul class="news-list">
+        <li>
+            <a href="javascript:;">2020年春运春节</a>
+        </li>
+        <li>
+            <a href="javascript:;">中国答卷-新中国成立70周年</a>
+        </li>
+        <li>
+            <a href="javascript:;">海军成立70周年</a>
+        </li>
+        <li>
+            <a href="javascript:;">脱贫攻坚网络展精彩上线</a>
+        </li>
+    </ul>
+
+</div>
+
+</body>
+</html>

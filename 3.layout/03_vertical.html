@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outer{
+            background-color: aquamarine;
+        }
+
+        .inner{
+            width: 100px;
+            height: 200px;
+            background-color: yellow;
+            margin-bottom: 100px;
+        }
+
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+
+            /**
+                该属性设置在父类盒子中，可以隐藏子盒子超出的部分
+             */
+            overflow: auto;
+        }
+
+        .box2{
+            width: 100px;
+            height: 400px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+
+<!--    <div class="outer">
+        <div class="inner"></div>
+        <div class="inner"></div>
+    </div>
+-->
+
+<div class="box1">
+    <div class="box2"></div>
+</div>
+
+
+</body>
+</html>

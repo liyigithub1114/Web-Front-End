@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outer{
+            width: 800px;
+            height: 200px;
+            border: 10px aquamarine solid;
+        }
+
+        .inner{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        /**
+            width 默认为auto
+            margin-left + border-left + padding-left
+            + content +
+            padding-right + border-right + margin-right
+            要等于父元素width
+            如果不等于， 则margin-right 自动填满
+
+         */
+    </style>
+</head>
+<body>
+
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+
+</body>
+</html>

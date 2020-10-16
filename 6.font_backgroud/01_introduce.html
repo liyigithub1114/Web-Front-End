@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字体与背景</title>
+
+    <link rel="stylesheet" href="./fontawesome/css/all.css">
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <style>
+        @font-face{
+            font-family: 'myfont';
+            src: url("./myfont/ZCOOLXiaoWei-Regular.ttf") format("truetype");
+            /**
+                truetype 高速浏览器解析格式
+             */
+        }
+
+        p{
+            font-size: 40px;
+            color: red;
+            font-family: myfont, 'Serif',sans-serif,monospace;
+        }
+
+        li{
+            list-style: none;
+        }
+
+
+        /**
+             在content中设置字体编码, 可以在all.css中查看
+             设置字体样式:
+                - fab
+                    - font-family: Font Awesome 5 Brands
+                - fas
+                    - font-family: Font Awesome 5 Free
+                    - font-weight: 900
+         */
+        li::before{
+            content: '\f1b0';
+            font-family: "Font Awesome 5 Brands","Font Awesome 5 Free";
+            font-weight: 900;
+            margin-right: 10px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+    font:
+        - color: 字体颜色
+        - font-size: 字体大小 em: 相对于当前元素的一个font-size rem: 相对于跟元素的一个font-size
+        - font-family: 字体格式
+            serif
+            sans-serif
+            monospace
+            可多个结合使用，浏览器支持哪个使用哪个
+            font-family: 'serif','sans-serif';
+
+    将服务器中的字体提供给用户使用
+    问题: 1.加载速度 2.版权 3.字体格式
+    @font-face{
+        font-family: 'myfont';
+        src: url('./font/xxx.ttf')
+    }
+    font-family: myfont
+
+    图标字体iconfont
+    使用方式：
+        1. 下载  fontawesome.com iconfont.cn
+        2. 解压
+        3. 将css 与 webfonts移动到项目中， 必须在同一文件夹汇中
+        4. 将all.css引入到网页中
+        5. 使用
+            - 直接通过类名使用图标字体 class="fas xxx"
+
+
+-->
+<p>今天天气针不戳～</p>
+<i class="fas fa-spin" style="color: red">
+    <i class="fas fa-spinner" aria-hidden="true"></i>
+</i>
+<i>针不戳</i>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+
+<!-- 通过&#x 加上字体编码同样可召唤 -->
+<span class="fas">&#xf0f3</span>
+<i class="iconfont" style="font-size: 100px">&#xe61c</i>
+<i class="iconfont icon-ganlaji" style="font-size: 100px"></i>
+</body>
+</html>

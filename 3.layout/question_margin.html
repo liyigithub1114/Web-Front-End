@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>外边距的折叠问题</title>
+
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+        }
+
+        /**
+            box1 和 box2 为兄弟元素
+            因此他们的margin 会折叠
+            当都是正数时  取他们绝对值最大的那个
+            当一正一负时  取他们的和
+            当全是负数时  取他们的绝对值的最大值(不是绝对值 如-200 -100 取-200)
+         */
+
+        .box1{
+            background-color: aquamarine;
+            margin-bottom: 100px;
+        }
+
+        .box2{
+            background-color: orange;
+            margin-top: 100px;
+        }
+
+        /**
+            box3 与 box4 是父子元素
+            当box4 设置margin-top会影响box3(同时向下移动)
+
+            因此必须处理该问题
+            1. 设置box3父盒子的padding
+            2. 设置box3父盒子的border
+            但以上两种都不是特别好
+            3.开启box3 的BFC
+            overflow: hidden
+            但是此方法仍有些副作用
+            4. 使用伪类
+            .clearfix::before,
+            .clearfix::after{
+                content: '';
+                display: table;
+                clear: both;
+            }
+         */
+
+        .box3{
+            background-color: yellow;
+            /* border: 1px red solid; */
+            /*
+            padding-top: 100px;
+            height: 100px;
+            删除box4的margin-top
+            */
+            overflow: hidden;
+        }
+
+        .box4{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="box1"></div>
+<div class="box2"></div>
+
+<div class="box3">
+    <div class="box4"></div>
+</div>
+</body>
+</html>

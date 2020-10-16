@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动布局</title>
+    <style>
+        header,main,footer{
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        header{
+            height: 150px;
+            background-color: red;
+        }
+
+        main{
+            height: 400px;
+            background-color: blue;
+
+            margin: 10px auto;
+        }
+
+        footer{
+            height: 150px;
+            background-color: green;
+        }
+
+        nav, article, aside{
+            float: left;
+            height: 100%;
+        }
+
+        nav{
+            width: 200px;
+            background-color: yellow;
+        }
+
+        article{
+            width: 580px;
+            background-color: gray;
+
+            margin: 0 10px;
+        }
+
+        aside{
+            width: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <main>
+        <!-- 左导航栏 -->
+        <nav></nav>
+        <!-- 主体 -->
+        <article></article>
+        <!-- 右边栏 -->
+        <aside></aside>
+    </main>
+    <footer></footer>
+</body>
+</html>
